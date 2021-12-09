@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport">
+    <title>Strive Calender</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!--
+
+        --------------------- COLLECTING CALENDAR'S FUNCTIONAL REQUIREMENTS ---------------------  -> ANALYSIS
+        
+        - show the days of the displayed month
+        - user can select a day (it will be highlighted, and related meetings will be displayed)
+        - provide some ways to collect user input about new meetings to be created
+        - meeting details should include meeting time and meeting description
+        - create new meetings based on the user input
+        - display assigned meetings related to the selected day (and even clear the list if no meeting is present)
+        - the days should be grouped in 7-days rows
+        - we want a title for each section (month/meeting creation/assigned meetings)
+
+        -- NICE TO HAVE:
+        - we want to persist our meeting data in order to not to lose it when we refresh the page
+        - we want the days to be created based on the actual current month
+        - we want the current day to be the selected one when we load the page
+        - the current day should be easily recognizable
+        - display the name of the month
+        - highlight the day I'm hovering
+        - show weekday names
+        - display days that have any assigned meeting in a different way
+        - being able to color days differently based on user choices
+        - being able to color meetings differently based on user choices
+        - our layout should be responsive (= behave correctly on mobile as well)
+        - being able to select multiple days and add meetings to all of them
+        - being able to delete/modify an exiting meeting
+
+
+
+        --------------------- LIST ALL THE THINGS WE HAVE TO IMPLEMENT ---------------------  -> DESIGN
+
+        --- HTML ELEMENTS
+        - a title for the calendar page
+        - a container for the days of the month
+        -- days of the month
+        - a container for the user input controls
+        -- meeting time input
+        -- meeting description input
+        -- meeting creation button
+        -- selected day label
+        - headers for each section
+        - a container (or list) to display all meetings related to the selected day
+
+        --- CSS STYLES
+        - inputs
+        - month
+        - headers
+        - generic day
+        - selected day
+        - meetings
+        
+
+        --- JAVASCRIPT FUNCTIONS
+        - select a day (when the user clicks on that)
+        - programmatically create days in the month
+        - read the user input and create a new meeting accordingly
+        - display meetings for the currently selected day
+        - save newly created meetings data in a structured way
+        - retrieve all meetings related to a specific day
+        
+        -- NICE TO HAVE:
+        - persist created meetings on the disk, and load them as soon as we load the page
+    -->
+
+    <script src="index.js"></script>
+
+    <h1>Strive Calendar</h1>
+
+    <!-- MONTH -->
+    <div id="month-container">
+        <!-- The days will be generated programmatically -->
+    </div>
+
+    <!-- MEETING CREATION -->
+    <div id="meeting-container">
+
+        <h2 id="meeting-title">Meetings for the day</h2>
+
+        <div id="meeting-creation">
+            <input type="time" id="meeting-time" value="09:00" />
+            <input type="text" id="meeting-description" placeholder="insert description here" />
+            <input type="button" value="Create" onclick="createNewMeeting()" />
+        </div>
+
+        <ul id="meetings-for-the-day">
+            <!-- The list of the meetings will be generated programmatically -->
+        </ul>
+
+    </div>
+</body>
+</html>
