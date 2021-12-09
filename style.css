@@ -13,9 +13,16 @@ button {
   width: 10rem;
 }
 
+#inputContainer {
+  text-align: center;
+}
+
 #numberDisplay {
   border-style: solid;
   display: inline-block;
+  height: 4rem;
+  width: 5rem;
+  text-align: center;
 }
 
 .number {
