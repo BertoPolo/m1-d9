@@ -10,10 +10,11 @@ const divCreator = function(){
         
     }
 }
+const randomNumber 
 
 const randomGenerator = function(){
 
-    return Math.floor(Math.random()*76 - 1)
+    const randomNumber= Math.floor(Math.random() * 76) + 1
 
 }
 
